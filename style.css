@@ -1,61 +1,122 @@
 :root {
-    --primary-color: #6e044d;     /* Dark Magenta for the main background */
-    --secondary-color:#39438b;   /* Dark Teal for the content boxes */
-    --accent-color: #c2db29;      /* Lime Green for titles and highlights */
-    --accent-pink: #f66ad8;       /* A secondary accent pink */
-    --accent-light-green: #50d598; /* A secondary accent light green */
-    --accent-lavender: #a492e0;   /* A secondary accent lavender */
-    --text-color: #f0f0f0;        /* Off-white for easy reading */
+    --primary-color: #6e044d;
+    --secondary-color: #046e6a;
+    --accent-color: #c2db29;
+    --text-color: #f0f0f0;
 }
 
+* {
+    box-sizing: border-box; /* This fixes many layout problems */
+}
 
 body {
     background-color: var(--primary-color);
     color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Source Code Pro', monospace;
     margin: 0;
     padding: 20px;
     text-align: center;
 }
 
-header {
-    margin-bottom: 40px;
+header, footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
 }
 
-header h1 {
+h1, h2 {
+    font-family: 'Orbitron', sans-serif;
     color: var(--accent-color);
-    font-size: 2.5em;
 }
 
-/* This uses Flexbox to create a nice gallery layout */
-.gallery {
+nav {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+nav a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Homepage Category Cards */
+.homepage-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    overflow: hidden;
+    transition: transform 0.2s ease;
     display: flex;
-    flex-direction: column; /* Stacks items on mobile */
-    gap: 30px; /* Space between items */
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end; /* Aligns text to bottom */
+    min-height: 300px;
+    position: relative;
 }
 
-.media-item {
+.category-card:hover {
+    transform: scale(1.03);
+}
+
+.category-card h2 {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 30px 10px 10px 10px;
+    margin: 0;
+}
+
+.category-card img, .category-card video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.audio-card-preview {
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0.3;
+}
+
+
+/* Photo Gallery Page Styles */
+.gallery-container {
     background-color: var(--secondary-color);
     border-radius: 10px;
     padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
 }
 
-.media-item h2 {
-    margin-top: 0;
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 
-/* Ensure media fits within its container */
-video, img {
+.photo-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 5px;
-}
-
-footer {
-    margin-top: 50px;
-    font-size: 0.8em;
-    opacity: 0.6;
 }
