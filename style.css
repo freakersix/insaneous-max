@@ -1,10 +1,13 @@
-/* A modern, clean reset to make browsers consistent */
 :root {
-    --primary-color: #1a1a1a;
-    --secondary-color: #2b2b2b;
-    --accent-color: #00ff9d;
-    --text-color: #f0f0f0;
+    --primary-color: #6e044d;     /* Dark Magenta for the main background */
+    --secondary-color:#39438b;   /* Dark Teal for the content boxes */
+    --accent-color: #c2db29;      /* Lime Green for titles and highlights */
+    --accent-pink: #f66ad8;       /* A secondary accent pink */
+    --accent-light-green: #50d598; /* A secondary accent light green */
+    --accent-lavender: #a492e0;   /* A secondary accent lavender */
+    --text-color: #f0f0f0;        /* Off-white for easy reading */
 }
+
 
 body {
     background-color: var(--primary-color);
