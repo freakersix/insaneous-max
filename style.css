@@ -1,9 +1,9 @@
 :root {
     --primary-color: #6e044d;
-    --secondary-color: #39438b; /* Your custom color choice */
+    --secondary-color: #19693e; /* Your custom color choice */
     --accent-color: #c2db29;
-    --accent-pink: #f66ad8;
-    --accent-light-green: #50d598;
+    --accent-pink: #d866a9;
+    --accent-light-green:#39438b;
     --accent-lavender: #a492e0;
     --text-color: #f0f0f0;
 }
