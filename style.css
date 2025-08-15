@@ -1,7 +1,10 @@
 :root {
     --primary-color: #6e044d;
-    --secondary-color: #046e6a;
+    --secondary-color: #39438b; /* Your custom color choice */
     --accent-color: #c2db29;
+    --accent-pink: #f66ad8;
+    --accent-light-green: #50d598;
+    --accent-lavender: #a492e0;
     --text-color: #f0f0f0;
 }
 
@@ -119,4 +122,44 @@ nav a {
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
+}
+
+/* Video Gallery Styles */
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.video-item h3 {
+    margin-top: 0;
+    color: var(--accent-light-green);
+}
+
+.video-item video {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Audio List Styles */
+.audio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.audio-item {
+    background-color: rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.audio-item h3 {
+    margin: 0 0 10px 0;
+    color: var(--accent-pink);
+}
+
+.audio-item audio {
+    width: 100%;
 }
