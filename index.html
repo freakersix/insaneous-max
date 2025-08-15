@@ -5,49 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>insaneous-max</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Source+Code+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header>
         <h1>insaneous-max</h1>
         <p>crazy work, dude.</p>
     </header>
 
-    <main>
-    <div class="media-item">
-        <h2>freaker vid</h2>
-        <video controls width="100%">
-            <source src="videos/sample.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <div class="gallery-container">
-        <h2>freaker fotos</h2>
-       <div class="photo-gallery">
-    <img src="images/sample.jpg" alt="freakin' sample image">
-
-    <img src="images/minion1.png" alt="minion, plz">
-    <img src="images/autism.jpg" alt="tee-hee">
-    <img src="images/spongeboss.gif" alt="too real...">
-</div>
-
-    </div>
-    
-    <div class="media-item">
-        <h2>freakers speak</h2>
-        <audio controls>
-            <source src="audio/sample.mp3" type="audio/mpeg">
-            Your browser does not support the audio tag.
-        </audio>
-    </div>
-</main>
-
+    <main class="homepage-main">
+        <a href="photos.html" class="category-card">
+            <img src="images/sample.jpg" alt="Preview of photo gallery">
+            <h2>freaker fotos</h2>
+        </a>
+        <a href="videos.html" class="category-card">
+            <video muted preload="metadata">
+                <source src="videos/sample.mp4#t=1">
+            </video>
+            <h2>freaker vids</h2>
+        </a>
+        <a href="audio.html" class="category-card">
+            <div class="audio-card-preview">♪</div>
+            <h2>freakers speak</h2>
+        </a>
+    </main>
 
     <footer>
         <p>&copy; 2025 insaneous-max</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
