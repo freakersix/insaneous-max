@@ -22,7 +22,9 @@
     <script>
         var canvas = document.getElementById("gameboy-screen");
         var gameboy = new GameBoyCore(canvas);
-        var romFileName = "MelanieMagicForest2025.gb"; 
+
+        // This is the corrected URL that will fix the CORS error on GitHub Pages
+        var romFileName = "https://cdn.jsdelivr.net/gh/freakersix/insaneous-max/MelanieMagicForest2025.gb"; 
 
         function runGame() {
             var request = new XMLHttpRequest();
@@ -34,7 +36,7 @@
                     var romData = new Uint8Array(request.response);
                     gameboy.start(romData);
                 } else {
-                    alert("Failed to download the game ROM. Make sure the file named '" + romFileName + "' has been uploaded.");
+                    alert("Failed to download the game ROM from jsDelivr. Please check the URL in the script.");
                 }
             };
             request.send();
@@ -44,4 +46,5 @@
 
 </body>
 </html>
+
 
