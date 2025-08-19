@@ -4,34 +4,14 @@
     <meta charset="UTF-8">
     <title>Melanie and the Magic Forest</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #111;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: white;
-            font-family: sans-serif;
-            flex-direction: column;
-        }
-        canvas {
-            background-color: #000;
-            image-rendering: pixelated; /* Keeps the retro look */
-            width: 80vmin; /* Responsive size based on screen dimension */
-            height: 72vmin;
-        }
-        .controls {
-            margin-top: 20px;
-            text-align: center;
-        }
+        body { margin: 0; background-color: #111; display: flex; justify-content: center; align-items: center; height: 100vh; color: white; font-family: sans-serif; flex-direction: column; }
+        canvas { background-color: #000; image-rendering: pixelated; width: 80vmin; height: 72vmin; }
+        .controls { margin-top: 20px; text-align: center; }
     </style>
 </head>
 <body>
 
     <canvas id="gameboy-screen"></canvas>
-
     <div class="controls">
         <p>Controls: Arrow Keys, Z (A), X (B), Enter (Start)</p>
     </div>
@@ -40,36 +20,28 @@
     <script src="https://cdn.jsdelivr.net/gh/grantgalitz/GameBoy-Online/js/main.js"></script>
     
     <script>
-        // Find the canvas element on the page
         var canvas = document.getElementById("gameboy-screen");
-
-        // Create a new instance of the Game Boy emulator
         var gameboy = new GameBoyCore(canvas);
-
-        // --- This is set to your chosen game file ---
         var romFileName = "MelanieMagicForest2025.gb"; 
 
-        // This function loads and runs the game file from your server
         function runGame() {
             var request = new XMLHttpRequest();
             request.open("GET", romFileName, true);
-            request.responseType = "arraybuffer"; // We need the file as raw data
+            request.responseType = "arraybuffer";
 
             request.onload = function () {
                 if (this.status === 200) {
                     var romData = new Uint8Array(request.response);
                     gameboy.start(romData);
                 } else {
-                    alert("Failed to download the game ROM. Make sure the file named '" + romFileName + "' has been uploaded to the same directory as this HTML file.");
+                    alert("Failed to download the game ROM. Make sure the file named '" + romFileName + "' has been uploaded.");
                 }
             };
-
             request.send();
         }
-
-        // Start the game!
         runGame();
     </script>
 
 </body>
 </html>
+

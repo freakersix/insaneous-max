@@ -1,0 +1,3 @@
+<FilesMatch "\.(gb)$">
+  Header set Content-Disposition "inline"
+</FilesMatch>
