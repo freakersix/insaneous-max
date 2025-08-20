@@ -3,3 +3,5 @@
 git filter=lfs diff=lfs merge=lfs -text
 add filter=lfs diff=lfs merge=lfs -text
 *kira_kira_pop_princess.nds filter=lfs diff=lfs merge=lfs -text
+/games/nds/ filter=lfs diff=lfs merge=lfs -text
+*.ninja_town.nds filter=lfs diff=lfs merge=lfs -text
